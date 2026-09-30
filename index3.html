@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>우민형 | 자기소개</title>
+
+  <style>
+    :root {
+      --navy: #1B2A4A;
+      --navy-light: #263b63;
+      --amber: #E8A33D;
+      --sky: #eaf4ff;
+      --text: #243b53;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", Arial, sans-serif;
+      color: var(--text);
+      background: #f7fafc;
+      line-height: 1.7;
+    }
+
+    /* 상단 소개 영역 */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 28px 20px 48px;
+      text-align: center;
+      color: var(--white);
+      background: var(--navy);
+    }
+
+    .hero::before,
+    .hero::after {
+      position: absolute;
+      border-radius: 50%;
+      content: "";
+      opacity: 0.1;
+      background: var(--amber);
+    }
+
+    .hero::before {
+      width: 180px;
+      height: 180px;
+      top: -100px;
+      left: -55px;
+    }
+
+    .hero::after {
+      width: 160px;
+      height: 160px;
+      right: -45px;
+      bottom: -90px;
+    }
+
+    .profile-icon {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      width: 78px;
+      height: 78px;
+      margin: 0 auto 10px;
+      place-items: center;
+      border: 3px solid rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      font-size: 38px;
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    }
+
+    .hero h1 {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      color: var(--amber);
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      position: relative;
+      z-index: 1;
+      margin: 6px 0 0;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* 본문 2단 구성 */
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 28px;
+      max-width: 1050px;
+      margin: -24px auto 0;
+      padding: 0 20px 56px;
+    }
+
+    .card {
+      padding: 30px;
+      border-radius: 20px;
+      background: var(--white);
+      box-shadow: 0 12px 35px rgba(16, 42, 67, 0.12);
+    }
+
+    .card h2 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 18px;
+      color: var(--navy);
+      font-size: 1.35rem;
+    }
+
+    .info-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .info-list li {
+      padding: 14px 0;
+      border-bottom: 1px solid #e8eef5;
+    }
+
+    .info-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .label {
+      display: block;
+      margin-bottom: 3px;
+      color: #627d98;
+      font-size: 0.88rem;
+    }
+
+    .value {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .interest-box {
+      padding: 22px;
+      border-radius: 16px;
+      background: var(--sky);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 8px 13px;
+      border-radius: 999px;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.92rem;
+      background: var(--white);
+      box-shadow: 0 3px 8px rgba(16, 42, 67, 0.08);
+    }
+
+    .favorites {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .favorite {
+      padding: 20px 10px;
+      border-radius: 15px;
+      text-align: center;
+      background: #f8fbff;
+      transition: transform 0.2s ease;
+    }
+
+    .favorite:hover {
+      transform: translateY(-5px);
+    }
+
+    .favorite .emoji {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 2rem;
+    }
+
+    .favorite strong {
+      font-size: 0.93rem;
+    }
+
+    .goal {
+      margin-top: 28px;
+      padding: 25px;
+      border-left: 6px solid var(--amber);
+      border-radius: 0 16px 16px 0;
+      color: var(--navy);
+      font-size: 1.08rem;
+      font-weight: 700;
+      background: #fff7e6;
+    }
+
+    footer {
+      padding: 0 20px 30px;
+      text-align: center;
+      color: #829ab1;
+      font-size: 0.85rem;
+    }
+
+    /* 스마트폰 반응형 */
+    @media (max-width: 720px) {
+      .hero {
+        padding: 24px 16px 42px;
+      }
+
+      .profile-icon {
+        width: 68px;
+        height: 68px;
+        font-size: 33px;
+      }
+
+      .container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-top: -18px;
+        padding: 0 16px 38px;
+      }
+
+      .card {
+        padding: 24px;
+      }
+
+      .favorites {
+        gap: 10px;
+      }
+
+      .favorite {
+        padding: 15px 6px;
+      }
+
+      .favorite strong {
+        font-size: 0.8rem;
+      }
+
+      .goal {
+        padding: 20px;
+        font-size: 0.98rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="profile-icon" aria-label="프로필 아이콘">👋</div>
+    <h1>우민형</h1>
+    <p>경영학과 2학년 · 새로운 가능성을 발견하고 실행합니다</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>🙋 기본 정보</h2>
+
+      <ul class="info-list">
+        <li>
+          <span class="label">이름</span>
+          <span class="value">우민형</span>
+        </li>
+        <li>
+          <span class="label">소속</span>
+          <span class="value">경영학과 2학년</span>
+        </li>
+        <li>
+          <span class="label">한마디</span>
+          <span class="value">배우고, 연결하고, 성장하는 사람</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>✨ 관심 분야</h2>
+
+      <div class="interest-box">
+        <div class="tags">
+          <span class="tag">🛍️ 유통</span>
+          <span class="tag">📣 마케팅</span>
+          <span class="tag">🚀 창업</span>
+        </div>
+      </div>
+
+      <h2 style="margin-top: 28px;">💙 좋아하는 것</h2>
+
+      <div class="favorites">
+        <div class="favorite">
+          <span class="emoji">☕</span>
+          <strong>카페 탐방</strong>
+        </div>
+
+        <div class="favorite">
+          <span class="emoji">📚</span>
+          <strong>독서</strong>
+        </div>
+
+        <div class="favorite">
+          <span class="emoji">✈️</span>
+          <strong>새로운 여행</strong>
+        </div>
+      </div>
+
+      <div class="goal">
+        🎯 목표: 아이디어를 사람들의 일상에 긍정적인 변화로 연결하는 기획자가 되겠습니다.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 우민형. All Rights Reserved.
+  </footer>
+</body>
+</html>
